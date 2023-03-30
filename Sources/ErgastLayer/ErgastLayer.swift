@@ -36,7 +36,8 @@ public protocol NetworkTask {
     
      var endPoint : EndPoint { get set}
     
-     init()
+    var endPointValue : String? { get set}
+    
     
 }
 
@@ -45,22 +46,24 @@ extension NetworkTask {
         var urlComponents = URLComponents()
         urlComponents.scheme = "http"
         urlComponents.host = "ergast.com"
-        urlComponents.path = "/api/f1" + endPoint.rawValue
+        urlComponents.path = "/api/f1" + "/\(endPointValue ?? "")" + endPoint.rawValue
         
         return urlComponents.url
     }
 }
 
 public struct DriverStandingTask : NetworkTask {
-   
+    
+    public var endPointValue: String?
     
     public typealias Response = DriverStandingsResponse
     
     public var endPoint: EndPoint = .driverStandings
     
-    
-    
-    public init() {}
+
+    public init(endPointValue : String?) {
+        self.endPointValue = endPointValue
+    }
     
     
 }
