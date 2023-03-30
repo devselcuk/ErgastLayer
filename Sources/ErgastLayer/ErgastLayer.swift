@@ -126,16 +126,20 @@ public struct Constructor: Codable {
 
 // Model for constructor standings
 public struct ConstructorStandingsResponse: Codable {
-    public let MTData: ConstructorStandingsMRData
+    public let MRData: ConstructorStandingsMRData
 }
 
 public struct ConstructorStandingsMRData: Codable {
     public let StandingsTable: ConstructorStandingsTable
 }
 
-public struct ConstructorStandingsTable: Codable {
+public struct ConstructorStandingsList : Codable {
     public let season: String
     public let ConstructorStandings: [ConstructorStanding]
+}
+
+public struct ConstructorStandingsTable: Codable {
+    public let StandingsLists : [ConstructorStandingsList]
 }
 
 public struct ConstructorStanding: Codable {
