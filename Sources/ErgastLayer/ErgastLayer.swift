@@ -21,9 +21,6 @@ public struct ErgastLayer {
           throw  error
         }
         
-        
-        
-        
     }
     
 }
@@ -38,6 +35,8 @@ public protocol NetworkTask {
     associatedtype Response : Codable
     
      var endPoint : EndPoint { get set}
+    
+     init()
     
 }
 
@@ -59,6 +58,9 @@ public struct DriverStandingTask : NetworkTask {
     
     public var endPoint: EndPoint = .driverStandings
     
+    
+    
+    public init() {}
     
     
 }
