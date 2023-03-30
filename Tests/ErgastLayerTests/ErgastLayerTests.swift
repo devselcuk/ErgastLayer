@@ -5,7 +5,7 @@ final class ErgastLayerTests: XCTestCase {
     
     func testUrlBuilder() throws {
        
-        let task = DriverStandingTask()
+        let task = DriverStandingTask(endPointValue: "current")
         let url = task.url
         let urlString = url?.absoluteString ?? ""
         print(urlString)
@@ -15,7 +15,7 @@ final class ErgastLayerTests: XCTestCase {
     
     @available(iOS 13.0.0, *)
     func testDriverStandingsResponse() async throws {
-       let response = try await ErgastLayer.execute(task: DriverStandingTask())
+        let response = try await ErgastLayer.execute(task: DriverStandingTask(endPointValue: "current"))
        XCTAssert(!response.MRData.StandingsTable.StandingsLists[0].DriverStandings.isEmpty)
     }
 }
