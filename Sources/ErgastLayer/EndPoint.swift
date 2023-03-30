@@ -9,4 +9,5 @@ import Foundation
 
 public enum EndPoint : String {
     case driverStandings = "/driverStandings.json"
+    case constructorStandings = "/constructorStandings.json"
 }

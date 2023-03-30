@@ -69,6 +69,19 @@ public struct DriverStandingTask : NetworkTask {
     
 }
 
+public struct ConstructorStandingTask : NetworkTask {
+    public var endPoint: EndPoint = .constructorStandings
+    
+    public var endPointValue: String?
+    
+    public typealias Response = ConstructorStandingsResponse
+    
+    public init( endPointValue: String?) {
+        self.endPointValue = endPointValue
+    }
+    
+}
+
 // Model for driver standings
 public struct DriverStandingsResponse: Codable {
     public let MRData: DriverStandingsMRData
@@ -113,23 +126,23 @@ public struct Constructor: Codable {
 
 // Model for constructor standings
 public struct ConstructorStandingsResponse: Codable {
-    public let mrData: ConstructorStandingsMRData
+    public let MTData: ConstructorStandingsMRData
 }
 
 public struct ConstructorStandingsMRData: Codable {
-    public let standingsTable: ConstructorStandingsTable
+    public let StandingsTable: ConstructorStandingsTable
 }
 
 public struct ConstructorStandingsTable: Codable {
     public let season: String
-    public let constructorStandings: [ConstructorStanding]
+    public let ConstructorStandings: [ConstructorStanding]
 }
 
 public struct ConstructorStanding: Codable {
     public let position: String
     public let points: String
     public let wins: String
-    public let constructor: Constructor
+    public let Constructor: Constructor
 }
 
 // Model for current drivers
