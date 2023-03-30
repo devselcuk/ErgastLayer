@@ -8,7 +8,6 @@ final class ErgastLayerTests: XCTestCase {
         let task = DriverStandingTask(endPointValue: "current")
         let url = task.url
         let urlString = url?.absoluteString ?? ""
-        print(urlString)
         XCTAssertEqual(urlString, "http://ergast.com/api/f1/current/driverStandings.json")
         
     }

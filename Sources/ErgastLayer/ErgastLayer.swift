@@ -14,6 +14,7 @@ public struct ErgastLayer {
         
         do {
             let response =  try JSONDecoder().decode(Task.Response.self, from: data)
+            print(response)
             return response
         } catch {
             print(error)
@@ -162,4 +163,10 @@ public struct Team: Codable {
     public let name: String
     public let nationality: String
     public let url: String
+}
+
+
+
+public struct MockData {
+   public static let driverStanding = DriverStanding(position: "7", points: "8", wins: "0", Driver: Driver(driverId: "stroll", permanentNumber: Optional("18"), code: Optional("STR"), givenName: "Lance", familyName: "Stroll", nationality: "Canadian"), Constructors: [Constructor(constructorId: "aston_martin", name: "Aston Martin", nationality: "British")])
 }
