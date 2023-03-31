@@ -186,4 +186,7 @@ public struct Team: Codable {
 
 public struct MockData {
    public static let driverStanding = DriverStanding(position: "7", points: "8", wins: "0", Driver: Driver(driverId: "stroll", permanentNumber: Optional("18"), code: Optional("STR"), givenName: "Lance", familyName: "Stroll", nationality: "Canadian"), Constructors: [Constructor(constructorId: "aston_martin", name: "Aston Martin", nationality: "British")])
+    
+    
+    public static let constructorStanding = ConstructorStanding(position: "1", points: "87", wins: "2", Constructor: Constructor(constructorId: "red_bull", name: "Red Bull", nationality: "Austrian"))
 }

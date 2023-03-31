@@ -22,6 +22,7 @@ final class ErgastLayerTests: XCTestCase {
     @available(iOS 13.0.0, *)
     func testConstructorStandingsResponse() async throws {
         let response = try await ErgastLayer.execute(task: ConstructorStandingTask(endPointValue: "current"))
+        print(response)
         XCTAssert(!response.MRData.StandingsTable.StandingsLists[0].ConstructorStandings.isEmpty)
     }
 }
